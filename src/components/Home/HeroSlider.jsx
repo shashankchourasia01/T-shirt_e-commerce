@@ -66,7 +66,7 @@ const HeroSlider = () => {
         {slides.map((slide, index) => (
           <div key={slide.id} className="w-full flex-shrink-0 relative">
             {/* Image Container */}
-            <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px]">
+            <div className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[950px]">
               {slide.image ? (
                 <img
                   src={slide.image}
