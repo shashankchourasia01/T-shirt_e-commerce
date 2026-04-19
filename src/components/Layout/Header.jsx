@@ -7,42 +7,124 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
-        <div className="px-4">
-          <div className="flex items-center justify-between h-14">
-            
+      <header style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 30,
+        backgroundColor: 'white',
+        borderBottom: '1px solid #e5e7eb',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
+      }}>
+        <div style={{ paddingLeft: '16px', paddingRight: '16px', maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '56px', position: 'relative' }}>
+
             {/* Hamburger */}
-            <button 
+            <button
               onClick={() => setIsSidebarOpen(true)}
-              className="p-2 -ml-2 hover:bg-gray-100 rounded-full transition active:scale-95"
+              style={{
+                padding: '8px',
+                marginLeft: '-8px',
+                borderRadius: '9999px',
+                border: 'none',
+                backgroundColor: 'transparent',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+              }}
             >
-              <Menu size={22} className="text-gray-800" />
+              <Menu size={22} color="#1f2937" />
             </button>
 
-            {/* Logo - Souled Store Style */}
-            <div className="absolute left-1/2 transform -translate-x-1/2">
-              <a href="/" className="block text-center">
-                <h1 className="font-poppins font-black text-lg tracking-tight">
-                  <span className="text-gray-900">THE</span>
-                  <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"> SHOE</span>
-                  <span className="text-gray-900"> LEX</span>
+            {/* Logo - centered absolutely */}
+            <div style={{
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              textAlign: 'center',
+              pointerEvents: 'none',
+            }}>
+              <a href="/" style={{ display: 'block', textDecoration: 'none', pointerEvents: 'auto' }}>
+                <h1 style={{
+                  fontFamily: '"Poppins", sans-serif',
+                  fontWeight: 900,
+                  fontSize: 'clamp(15px, 4vw, 20px)',
+                  letterSpacing: '-0.5px',
+                  margin: 0,
+                  lineHeight: 1.2,
+                  whiteSpace: 'nowrap',
+                }}>
+                  <span style={{ color: '#111827' }}>THE </span>
+                  <span style={{
+                    background: 'linear-gradient(to right, #16a34a, #2563eb)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}>SHOE</span>
+                  <span style={{ color: '#111827' }}> LEX</span>
                 </h1>
-                <p className="text-[9px] text-gray-500 tracking-wider -mt-0.5">POP CULTURE APPAREL</p>
+                <p style={{
+                  fontSize: '8px',
+                  color: '#9ca3af',
+                  letterSpacing: '2px',
+                  marginTop: '-2px',
+                  margin: 0,
+                  fontFamily: '"Inter", sans-serif',
+                }}>
+                  POP CULTURE APPAREL
+                </p>
               </a>
             </div>
 
             {/* Right Icons */}
-            <div className="flex items-center gap-4">
-              <button className="p-2 hover:bg-gray-100 rounded-full transition">
-                <Search size={20} className="text-gray-700" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
+              <button style={{
+                padding: '8px',
+                borderRadius: '9999px',
+                border: 'none',
+                backgroundColor: 'transparent',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+                <Search size={20} color="#374151" />
               </button>
-              <button className="p-2 hover:bg-gray-100 rounded-full transition relative">
-                <ShoppingBag size={20} className="text-gray-700" />
-                <span className="absolute -top-0.5 -right-0.5 bg-orange-500 text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center">
+
+              <button style={{
+                padding: '8px',
+                borderRadius: '9999px',
+                border: 'none',
+                backgroundColor: 'transparent',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+              }}>
+                <ShoppingBag size={20} color="#374151" />
+                <span style={{
+                  position: 'absolute',
+                  top: '2px',
+                  right: '2px',
+                  backgroundColor: '#f97316',
+                  color: 'white',
+                  fontSize: '9px',
+                  fontWeight: 700,
+                  borderRadius: '9999px',
+                  height: '16px',
+                  width: '16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  lineHeight: 1,
+                }}>
                   0
                 </span>
               </button>
             </div>
+
           </div>
         </div>
       </header>
