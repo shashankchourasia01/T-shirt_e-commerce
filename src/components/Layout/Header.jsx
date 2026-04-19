@@ -24,15 +24,15 @@ const Header = () => {
               <a href="/" className="block text-center">
                 <h1 className="font-poppins font-black text-lg tracking-tight">
                   <span className="text-gray-900">THE</span>
-                  <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"> SOULED</span>
-                  <span className="text-gray-900"> STORE</span>
+                  <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"> SHOE</span>
+                  <span className="text-gray-900"> LEX</span>
                 </h1>
                 <p className="text-[9px] text-gray-500 tracking-wider -mt-0.5">POP CULTURE APPAREL</p>
               </a>
             </div>
 
             {/* Right Icons */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-4">
               <button className="p-2 hover:bg-gray-100 rounded-full transition">
                 <Search size={20} className="text-gray-700" />
               </button>
