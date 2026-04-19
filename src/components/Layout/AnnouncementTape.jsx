@@ -20,11 +20,21 @@ const AnnouncementTape = () => {
   const current = announcements[currentIndex];
   const Icon = current.icon;
 
+  // Inline styles for gradient background
+  const tapeStyle = {
+    background: 'linear-gradient(135deg, #86efac 0%, #93c5fd 100%)',
+    paddingTop: '12px',
+    paddingBottom: '12px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
+    borderBottom: '1px solid #e5e7eb'
+  };
+
   return (
-    <div className="bg-gradient-to-r from-green-300 to-blue-300 py-3 px-4 border-b border-gray-200">
+    <div style={tapeStyle}>
       <div className="flex items-center justify-center gap-2">
         {Icon && <Icon size={18} className="text-green-700" />}
-        <p className="text-gray-800 text-sm sm:text-base  text-center">
+        <p className="text-gray-800 text-sm sm:text-base font-semibold text-center">
           {current.text}
         </p>
       </div>
