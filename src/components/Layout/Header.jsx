@@ -7,47 +7,38 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-dark-bg/95 backdrop-blur-md border-b border-gray-800">
-        <div className="container-custom">
-          <div className="flex items-center justify-between h-14 sm:h-16">
+      <header className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
+        <div className="px-4">
+          <div className="flex items-center justify-between h-14">
             
-            {/* Left Side - Hamburger Icon */}
+            {/* Hamburger */}
             <button 
               onClick={() => setIsSidebarOpen(true)}
-              className="p-2 -ml-2 hover:bg-white/10 rounded-full transition active:scale-95"
-              aria-label="Menu"
+              className="p-2 -ml-2 hover:bg-gray-100 rounded-full transition active:scale-95"
             >
-              <Menu size={22} />
+              <Menu size={22} className="text-gray-800" />
             </button>
 
-            {/* Center - Logo (Replaceable - baad mein apna dal sakte ho) */}
+            {/* Logo - Souled Store Style */}
             <div className="absolute left-1/2 transform -translate-x-1/2">
-              <a href="/" className="block">
-                <h1 className="font-poppins font-extrabold text-lg sm:text-xl tracking-tight">
-                  <span className="bg-gradient-to-r from-accent-neon to-accent-electric bg-clip-text text-transparent">
-                    TSHIRT
-                  </span>
-                  <span className="text-primary-white">STORE</span>
+              <a href="/" className="block text-center">
+                <h1 className="font-poppins font-black text-lg tracking-tight">
+                  <span className="text-gray-900">THE</span>
+                  <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"> SOULED</span>
+                  <span className="text-gray-900"> STORE</span>
                 </h1>
-                {/* Small text - Souled Store style */}
-                <p className="text-[10px] text-secondary-gray text-center hidden sm:block">
-                  Pop Culture Apparel
-                </p>
+                <p className="text-[9px] text-gray-500 tracking-wider -mt-0.5">POP CULTURE APPAREL</p>
               </a>
             </div>
 
-            {/* Right Side - Search + Cart Icons */}
-            <div className="flex items-center gap-1 sm:gap-2">
-              {/* Search Icon */}
-              <button className="p-2 hover:bg-white/10 rounded-full transition active:scale-95">
-                <Search size={20} />
+            {/* Right Icons */}
+            <div className="flex items-center gap-1">
+              <button className="p-2 hover:bg-gray-100 rounded-full transition">
+                <Search size={20} className="text-gray-700" />
               </button>
-              
-              {/* Cart Icon with Badge */}
-              <button className="p-2 hover:bg-white/10 rounded-full transition active:scale-95 relative">
-                <ShoppingBag size={20} />
-                {/* Cart Badge - 0 items initially, baad mein dynamic hoga */}
-                <span className="absolute -top-1 -right-1 bg-accent-orange text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center">
+              <button className="p-2 hover:bg-gray-100 rounded-full transition relative">
+                <ShoppingBag size={20} className="text-gray-700" />
+                <span className="absolute -top-0.5 -right-0.5 bg-orange-500 text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center">
                   0
                 </span>
               </button>
@@ -56,11 +47,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Sidebar Component */}
-      <MobileSidebar 
-        isOpen={isSidebarOpen} 
-        onClose={() => setIsSidebarOpen(false)} 
-      />
+      <MobileSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </>
   );
 };

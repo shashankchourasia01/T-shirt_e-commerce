@@ -1,33 +1,23 @@
 @import "tailwindcss";
 
-/* Fonts */
 @theme {
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
   
-  /* Colors */
-  --color-dark-bg: #0A0A0A;
-  --color-card-bg: #1A1A1A;
-  --color-primary-white: #FFFFFF;
-  --color-secondary-gray: #B0B0B0;
-  --color-accent-neon: #00FF87;
-  --color-accent-electric: #00D4FF;
+  /* Light Theme Colors - Souled Store Style */
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F8F9FA;
+  --color-card-white: #FFFFFF;
+  --color-text-dark: #1A1A1A;
+  --color-text-gray: #666666;
+  --color-text-light: #888888;
+  --color-border: #E5E5E5;
+  --color-accent-neon: #00C853;
+  --color-accent-electric: #2196F3;
   --color-accent-orange: #FF6B35;
-  --color-accent-pink: #FF2D75;
-}
-/* Custom theme colors - The Souled Store style */
-@theme {
-  --color-dark-bg: #0A0A0A;
-  --color-card-bg: #1A1A1A;
-  --color-primary-white: #FFFFFF;
-  --color-secondary-gray: #B0B0B0;
-  --color-accent-neon: #00FF87;
-  --color-accent-electric: #00D4FF;
-  --color-accent-orange: #FF6B35;
-  --color-accent-pink: #FF2D75;
+  --color-accent-pink: #E91E63;
 }
 
-/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -35,12 +25,16 @@
 }
 
 body {
-  background-color: var(--color-dark-bg);
-  color: var(--color-primary-white);
-  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
-/* Mobile-first container */
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 .container-custom {
   max-width: 1280px;
   margin-left: auto;

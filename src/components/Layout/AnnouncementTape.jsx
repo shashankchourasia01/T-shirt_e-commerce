@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Gift } from 'lucide-react';
+import { Gift } from 'lucide-react';
 
 const announcements = [
   { id: 1, text: "10% Cashback on All Orders as TSS Points", icon: Gift },
@@ -21,10 +21,10 @@ const AnnouncementTape = () => {
   const Icon = current.icon;
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 to-gray-800 py-2.5 px-4 border-b border-gray-700">
+    <div className="bg-gradient-to-r from-green-50 to-blue-50 py-2.5 px-4 border-b border-gray-200">
       <div className="flex items-center justify-center gap-2">
-        {Icon && <Icon size={14} className="text-accent-neon" />}
-        <p className="text-white text-xs sm:text-sm font-medium text-center">
+        {Icon && <Icon size={14} className="text-green-600" />}
+        <p className="text-gray-700 text-xs sm:text-sm font-medium text-center">
           {current.text}
         </p>
       </div>
