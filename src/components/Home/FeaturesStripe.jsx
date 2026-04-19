@@ -26,7 +26,7 @@ const FeaturesStripe = () => {
   ];
 
   return (
-    <div className="bg-white border-b border-gray-100">
+    <div className="bg-white border-b border-gray-100 mt-4">
       <div className="px-3 sm:px-4 py-3 sm:py-5">
         {/* Flex with nowrap and justify-between - No horizontal scroll */}
         <div className="flex items-center justify-between gap-2 sm:gap-4">
