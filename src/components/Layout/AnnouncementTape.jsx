@@ -21,10 +21,10 @@ const AnnouncementTape = () => {
   const Icon = current.icon;
 
   return (
-    <div className="bg-gradient-to-r from-green-300 to-blue-300 py-3.5 px-4 border-b border-gray-200">
+    <div className="bg-gradient-to-r from-green-300 to-blue-300 py-3 px-4 border-b border-gray-200">
       <div className="flex items-center justify-center gap-2">
-        {Icon && <Icon size={14} className="text-green-600" />}
-        <p className="text-gray-700 text-xs sm:text-sm font-medium text-center">
+        {Icon && <Icon size={18} className="text-green-700" />}
+        <p className="text-gray-800 text-sm sm:text-base font-semibold text-center">
           {current.text}
         </p>
       </div>
