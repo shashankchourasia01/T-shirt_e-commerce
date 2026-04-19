@@ -13,47 +13,47 @@ const FeaturesStripe = () => {
       id: 2,
       icon: RotateCcw,
       title: "10 Days",
-      description: "Easy Returns & Exchange",
+      description: "Easy Returns",
       highlight: false
     },
     {
       id: 3,
       icon: Truck,
       title: "Free & Fast",
-      description: "Shipping on All Orders",
+      description: "Shipping",
       highlight: false
     }
   ];
 
   return (
     <div className="bg-white border-b border-gray-100">
-      <div className="container-custom py-4 sm:py-5 md:py-6">
-        {/* Horizontal scroll on mobile, grid on tablet+ */}
-        <div className="flex overflow-x-auto scrollbar-hide gap-6 sm:gap-8 md:gap-12 justify-center sm:flex-nowrap">
+      <div className="px-3 sm:px-4 py-3 sm:py-5">
+        {/* Flex with nowrap and justify-between - No horizontal scroll */}
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <div 
                 key={feature.id}
-                className="flex items-center gap-3 sm:gap-4 flex-shrink-0"
+                className="flex items-center gap-1.5 sm:gap-3"
               >
-                {/* Icon Circle */}
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center ${
+                {/* Icon - Smaller on mobile */}
+                <div className={`w-8 h-8 sm:w-11 sm:h-11 rounded-full flex items-center justify-center flex-shrink-0 ${
                   feature.highlight 
                     ? 'bg-black text-white' 
                     : 'bg-gray-100 text-black'
                 }`}>
-                  <Icon size={20} className="sm:w-5 sm:h-5" />
+                  <Icon size={16} className="sm:w-5 sm:h-5" />
                 </div>
                 
-                {/* Text */}
+                {/* Text - Smaller on mobile */}
                 <div>
-                  <h3 className={`font-bold text-sm sm:text-base ${
+                  <h3 className={`font-bold text-xs sm:text-base ${
                     feature.highlight ? 'text-black' : 'text-gray-800'
                   }`}>
                     {feature.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-500 whitespace-nowrap">
+                  <p className="text-[10px] sm:text-sm text-gray-500 whitespace-nowrap">
                     {feature.description}
                   </p>
                 </div>
