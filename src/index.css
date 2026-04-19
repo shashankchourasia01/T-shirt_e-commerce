@@ -69,33 +69,15 @@ html {
 
 
 // for new arrivals
-/* Hide scrollbar but keep functionality for cleaner look */
-.scrollbar-custom {
-  scrollbar-width: thin;
-  -ms-overflow-style: auto;
-}
 
-.scrollbar-custom::-webkit-scrollbar {
-  height: 4px;
+/* NewArrivals responsive card width */
+@media (min-width: 640px) {
+  [data-arrivals] > div {
+    min-width: calc(33.33% - 8px);
+  }
 }
-
-.scrollbar-custom::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  border-radius: 10px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background: #d4d4d4;
-  border-radius: 10px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb:hover {
-  background: #a3a3a3;
-}
-
-/* Mobile - subtle scroll indicator */
-@media (max-width: 640px) {
-  .scrollbar-custom {
-    scrollbar-width: thin;
+@media (min-width: 1024px) {
+  [data-arrivals] > div {
+    min-width: calc(25% - 9px);
   }
 }
