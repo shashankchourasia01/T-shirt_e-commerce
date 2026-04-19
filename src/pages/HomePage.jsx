@@ -1,7 +1,7 @@
 import HeroSlider from '../components/Home/HeroSlider';
 import FeaturesStripe from '../components/Home/FeaturesStripe';
 import LatestDrops from '../components/Home/LatestDrops';
-
+import NewArrivals from '../components/Home/NewArrivals';
 const HomePage = () => {
   return (
     <div className="bg-white min-h-screen">
@@ -13,6 +13,9 @@ const HomePage = () => {
       <div style={{ marginTop: '24px' }}>
         <LatestDrops />
       </div>
+
+        {/* New Arrivals Section - Naya add kiya */}
+      <NewArrivals />
 
       <div className="container-custom py-8 sm:py-12">
         <div className="text-center">

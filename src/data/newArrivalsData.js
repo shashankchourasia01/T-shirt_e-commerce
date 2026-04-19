@@ -1,0 +1,98 @@
+export const newArrivalsData = [
+  {
+    id: 1,
+    name: "Looney Tunes: The Bunny",
+    type: "OVERSIZED",
+    fit: "COMFORT STRETCH FABRIC",
+    detail: "EMBROIDERY",
+    price: 1199,
+    originalPrice: 2299,
+    discount: 48,
+    image: "/images/new_arr1.avif",
+    category: "Cartoon"
+  },
+  {
+    id: 2,
+    name: "Bootcut Denim: Indigo Blu",
+    type: "BOOTCUT FIT",
+    fit: "DENIM FABRIC",
+    detail: "WASHED EFFECT",
+    price: 2299,
+    originalPrice: 2999,
+    discount: 23,
+    image: "/images/new_arr2.avif",
+    category: "Denim"
+  },
+  {
+    id: 3,
+    name: "Oversized Polos",
+    type: "OVERSIZED",
+    fit: "PREMIUM COTTON",
+    detail: "POCKET DETAIL",
+    price: 1499,
+    originalPrice: 2499,
+    discount: 40,
+    image: "/images/new_arr3.avif",
+    category: "Polos"
+  },
+  {
+    id: 4,
+    name: "Men Jeans",
+    type: "SLIM FIT",
+    fit: "STRETCH DENIM",
+    detail: "5 POCKET",
+    price: 1899,
+    originalPrice: 2999,
+    discount: 37,
+    image: "/images/new_arr4.avif",
+    category: "Jeans"
+  },
+  {
+    id: 5,
+    name: "Batman Dark Knight",
+    type: "OVERSIZED",
+    fit: "COTTON BLEND",
+    detail: "SCREEN PRINT",
+    price: 999,
+    originalPrice: 1599,
+    discount: 38,
+    image: "/images/new_arr5.avif",
+    category: "Pop Culture"
+  },
+  {
+    id: 6,
+    name: "Deadpool Funny Tee",
+    type: "REGULAR FIT",
+    fit: "100% COTTON",
+    detail: "QUOTE PRINT",
+    price: 899,
+    originalPrice: 1299,
+    discount: 31,
+    image: "/images/new_arr6.avif",
+    category: "Comedy"
+  },
+  {
+    id: 7,
+    name: "Rick & Morty Portal",
+    type: "OVERSIZED",
+    fit: "PREMIUM BLEND",
+    detail: "ALL OVER PRINT",
+    price: 1099,
+    originalPrice: 1799,
+    discount: 39,
+    image: "/images/new_arr1.avif",
+    category: "Animation"
+  },
+  {
+    id: 8,
+    name: "Stranger Things 80s",
+    type: "VINTAGE FIT",
+    fit: "SOFT WASH",
+    detail: "DISTRESSED",
+    price: 1299,
+    originalPrice: 1999,
+    discount: 35,
+    image: "/images/new_arr3.avif",
+    category: "TV Shows"
+  }
+];
