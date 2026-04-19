@@ -20,8 +20,8 @@ const NewArrivals = () => {
     <div style={{
       width: '100%',
       backgroundColor: '#ffffff',
-      paddingTop: '48px',
-      paddingBottom: '48px'
+      paddingTop: '4px',
+      paddingBottom: '28px'
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -34,7 +34,7 @@ const NewArrivals = () => {
         {/* Heading Section */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <h2 style={{
-            fontSize: '28px',
+            fontSize: '18px',
             fontWeight: '700',
             color: '#1a1a1a',
             letterSpacing: '-0.5px'
@@ -45,7 +45,7 @@ const NewArrivals = () => {
             width: '60px',
             height: '3px',
             background: 'linear-gradient(90deg, #00C853, #2196F3)',
-            marginTop: '8px',
+            marginTop: '4px',
             marginLeft: 'auto',
             marginRight: 'auto'
           }} />
