@@ -8,15 +8,25 @@ const AllSections = () => {
 
   return (
     <div style={{ width: '100%', backgroundColor: '#fff', paddingTop: '40px', paddingBottom: '48px' }}>
-      <div style={{ maxWidth: '1280px', margin: '0 auto', paddingLeft: '16px', paddingRight: '16px' }}>
+      <div style={{
+        maxWidth: '1280px',
+        margin: '0 auto',
+        paddingLeft: '16px',
+        paddingRight: '16px',
+        boxSizing: 'border-box',
+        // KEY FIX: overflow hidden so nothing bleeds out
+        overflow: 'hidden',
+      }}>
 
         {/* Category Pills */}
         <div
           className="categories-scroll"
           style={{
             display: 'flex', gap: '8px',
-            overflowX: 'auto', paddingBottom: '4px',
+            overflowX: 'auto', paddingBottom: '6px',
             marginBottom: '24px',
+            // prevent pills from stretching container
+            width: '100%',
           }}
         >
           {categories.map((cat) => (
@@ -24,17 +34,16 @@ const AllSections = () => {
               key={cat.id}
               onClick={() => setActiveCategory(cat.slug)}
               style={{
-                padding: '9px 18px',
+                padding: '9px 16px',
                 backgroundColor: activeCategory === cat.slug ? '#111827' : '#f3f4f6',
                 color: activeCategory === cat.slug ? '#fff' : '#4b5563',
                 border: activeCategory === cat.slug ? 'none' : '1px solid #e5e7eb',
                 borderRadius: '9999px',
-                fontSize: '13px',
+                fontSize: '12px',
                 fontWeight: activeCategory === cat.slug ? 700 : 500,
                 whiteSpace: 'nowrap',
                 cursor: 'pointer',
                 flexShrink: 0,
-                transition: 'all 0.2s',
               }}
             >
               {cat.name}
@@ -42,7 +51,7 @@ const AllSections = () => {
           ))}
         </div>
 
-        {/* Section title */}
+        {/* Section Title */}
         <div style={{ marginBottom: '16px' }}>
           <h2 style={{
             fontSize: 'clamp(18px, 5vw, 24px)',
@@ -50,12 +59,15 @@ const AllSections = () => {
             margin: 0, letterSpacing: '-0.3px',
           }}>
             {categories.find(c => c.slug === activeCategory)?.name}
-            {' '}<span style={{
+            {' '}
+            <span style={{
               background: 'linear-gradient(to right, #16a34a, #2563eb)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-            }}>COLLECTION</span>
+            }}>
+              COLLECTION
+            </span>
           </h2>
           <div style={{
             width: '36px', height: '3px',
@@ -64,22 +76,29 @@ const AllSections = () => {
           }} />
         </div>
 
-        {/* 2-column grid — all products */}
+        {/* Grid — KEY FIX: width 100%, no overflow */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '12px',
+          width: '100%',
+          boxSizing: 'border-box',
         }}
           className="all-sections-grid"
         >
           {currentProducts.map((product) => (
-            <CategoryProductCard key={product.id} product={product} />
+            <div key={product.id} style={{ minWidth: 0, boxSizing: 'border-box' }}>
+              <CategoryProductCard product={product} />
+            </div>
           ))}
         </div>
 
       </div>
 
       <style>{`
+        .categories-scroll::-webkit-scrollbar { display: none; }
+        .categories-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
         @media (min-width: 640px) {
           .all-sections-grid {
             grid-template-columns: repeat(3, 1fr) !important;

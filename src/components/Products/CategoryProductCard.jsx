@@ -6,36 +6,35 @@ const CategoryProductCard = ({ product }) => {
   };
 
   return (
-    <div style={{ backgroundColor: '#fff', cursor: 'pointer', width: '100%' }}>
+    <div style={{ backgroundColor: '#fff', cursor: 'pointer', width: '100%', boxSizing: 'border-box' }}>
 
       {/* Image */}
       <div style={{
         position: 'relative',
-        aspectRatio: '3 / 4',
+        width: '100%',
+        paddingBottom: '125%', // fixed 4:5 ratio — har card same height
         backgroundColor: '#f5f5f5',
         overflow: 'hidden',
         borderRadius: '8px',
       }}>
-        {/* Discount badge */}
         {product.discount && (
           <span style={{
             position: 'absolute', top: '8px', left: '8px',
             backgroundColor: '#e53935', color: '#fff',
             fontSize: '10px', fontWeight: 700,
-            padding: '2px 7px', borderRadius: '20px', zIndex: 10,
+            padding: '3px 8px', borderRadius: '20px', zIndex: 10,
           }}>
             -{product.discount}%
           </span>
         )}
 
-        {/* Fit tag on image bottom */}
         {product.tag && (
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0,
-            backgroundColor: 'rgba(0,0,0,0.72)',
+            backgroundColor: 'rgba(0,0,0,0.75)',
             color: '#fff', fontSize: '9px', fontWeight: 700,
-            letterSpacing: '1px', padding: '5px 8px',
-            textAlign: 'center',
+            letterSpacing: '1.5px', padding: '6px 8px',
+            textAlign: 'center', zIndex: 10,
           }}>
             {product.tag}
           </div>
@@ -45,13 +44,23 @@ const CategoryProductCard = ({ product }) => {
           src={product.image}
           alt={product.name}
           onError={handleImageError}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{
+            position: 'absolute',
+            top: 0, left: 0,
+            width: '100%', height: '100%',
+            objectFit: 'cover',
+          }}
         />
       </div>
 
       {/* Info */}
-      <div style={{ padding: '8px 2px 4px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div style={{ flex: 1, minWidth: 0 }}>
+      <div style={{
+        padding: '8px 2px 4px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+      }}>
+        <div style={{ flex: 1, minWidth: 0, paddingRight: '4px' }}>
           <p style={{
             fontSize: '13px', fontWeight: 600, color: '#111827',
             margin: '0 0 2px', lineHeight: 1.3,
@@ -65,7 +74,7 @@ const CategoryProductCard = ({ product }) => {
           }}>
             {product.type}
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '14px', fontWeight: 700, color: '#111827' }}>
               ₹{product.price}
             </span>
@@ -77,7 +86,6 @@ const CategoryProductCard = ({ product }) => {
           </div>
         </div>
 
-        {/* Heart */}
         <button
           style={{
             padding: '4px', border: 'none', background: 'none',
@@ -85,7 +93,7 @@ const CategoryProductCard = ({ product }) => {
           }}
           onClick={(e) => e.stopPropagation()}
         >
-          <Heart size={16} color="#9ca3af" />
+          <Heart size={15} color="#9ca3af" />
         </button>
       </div>
     </div>
