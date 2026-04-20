@@ -7,7 +7,7 @@ const AllSections = () => {
   const currentProducts = productsByCategory[activeCategory] || [];
 
   return (
-    <div style={{ width: '100%', backgroundColor: '#fff', paddingTop: '40px', paddingBottom: '48px' }}>
+    <div style={{ width: '100%', backgroundColor: '#fff', paddingTop: '30px', paddingBottom: '48px' }}>
       <div style={{
         maxWidth: '1280px',
         margin: '0 auto',
