@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Eye } from 'lucide-react';
 
 const LatestDrops = () => {
     const drops = [
@@ -53,90 +52,91 @@ const LatestDrops = () => {
     const currentDrop = drops[currentIndex];
 
     return (
-        <div className="w-full bg-white" style={{ paddingBottom: '40px' }}>
-            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div style={{ width: '100%', backgroundColor: '#fff', paddingTop: '10px', paddingBottom: '20px' }}>
+            <div style={{
+                maxWidth: '1280px',
+                margin: '0 auto',
+                paddingLeft: '16px',
+                paddingRight: '16px',
+                boxSizing: 'border-box',
+            }}>
 
                 {/* Heading */}
-                {/* Heading */}
-<div style={{ marginBottom: '24px' }}>
-  <h2 style={{
-    fontFamily: '"DM Sans", sans-serif',
-    fontSize: 'clamp(20px, 5.5vw, 30px)',
-    fontWeight: 800,
-    color: '#111827',
-    margin: 0,
-    letterSpacing: '-0.5px',
-    lineHeight: 1.15,
-  }}>
-    LATEST{' '}
-    <span style={{
-      fontFamily: '"DM Sans", sans-serif',
-      fontWeight: 300,
-      letterSpacing: '4px',
-      fontSize: 'clamp(20px, 5.5vw, 30px)',
-      background: 'linear-gradient(to right, #16a34a, #2563eb)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text',
-    }}>
-      DROPS
-    </span>
-  </h2>
-  <div style={{
-    width: '40px',
-    height: '2px',
-    background: 'linear-gradient(to right, #16a34a, #2563eb)',
-    borderRadius: '9999px',
-    marginTop: '8px',
-  }} />
-</div>
+                <div style={{ marginBottom: '20px' }}>
+                    <h2 style={{
+                        fontFamily: '"DM Sans", sans-serif',
+                        fontSize: 'clamp(20px, 5.5vw, 30px)',
+                        fontWeight: 800,
+                        color: '#111827',
+                        margin: 0,
+                        letterSpacing: '-0.5px',
+                        lineHeight: 1.15,
+                    }}>
+                        LATEST{' '}
+                        <span style={{
+                            fontFamily: '"DM Sans", sans-serif',
+                            fontWeight: 300,
+                            letterSpacing: '4px',
+                            fontSize: 'clamp(20px, 5.5vw, 30px)',
+                            background: 'linear-gradient(to right, #16a34a, #2563eb)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                        }}>
+                            DROPS
+                        </span>
+                    </h2>
+                    <div style={{
+                        width: '40px',
+                        height: '2px',
+                        background: 'linear-gradient(to right, #16a34a, #2563eb)',
+                        borderRadius: '9999px',
+                        marginTop: '8px',
+                    }} />
+                </div>
 
                 {/* Slider */}
-                <div className="relative">
+                <div style={{ position: 'relative' }}>
 
-                    {/* Image Card */}
-                    <div className="overflow-hidden bg-gray-900">
-                        <div className="relative h-[260px] sm:h-[380px] md:h-[480px] lg:h-[560px]">
+                    {/* Image — borderRadius se left/right white gap */}
+                    <div style={{
+                        overflow: 'hidden',
+                        backgroundColor: '#111827',
+                        borderRadius: '12px',
+                    }}>
+                        <div className="latest-drop-img" style={{ position: 'relative' }}>
                             {currentDrop.image ? (
                                 <img
                                     src={currentDrop.image}
                                     alt={currentDrop.subtitle}
-                                    className="w-full h-full object-cover transition-opacity duration-500"
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        transition: 'opacity 0.5s',
+                                        display: 'block',
+                                    }}
                                     onError={(e) => {
                                         e.target.src = `https://placehold.co/800x600/1a1a1a/00FF87/png?text=${currentDrop.subtitle}`;
                                     }}
                                 />
                             ) : (
-                                <div className="w-full h-full bg-gradient-to-r from-gray-800 to-gray-900 flex items-center justify-center">
-                                    <p className="text-gray-400">{currentDrop.subtitle}</p>
+                                <div style={{
+                                    width: '100%', height: '100%',
+                                    backgroundColor: '#1f2937',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                }}>
+                                    <p style={{ color: '#9ca3af' }}>{currentDrop.subtitle}</p>
                                 </div>
                             )}
-
-                            {/* Overlay — uncomment karna ho toh ready hai */}
-                            {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-10 text-white">
-                  <p className="text-xs sm:text-sm text-green-400 font-semibold tracking-wider mb-1 sm:mb-2">
-                    {currentDrop.title}
-                  </p>
-                  <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3">
-                    {currentDrop.subtitle}
-                  </h3>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-200 max-w-md mb-3 sm:mb-4">
-                    {currentDrop.description}
-                  </p>
-                  <p className="text-[10px] sm:text-xs text-gray-400 mb-3 sm:mb-4">
-                    {currentDrop.footer}
-                  </p>
-                  <button className="px-5 sm:px-6 py-2 sm:py-2.5 bg-white text-gray-900 font-semibold rounded-full text-xs sm:text-sm hover:bg-gray-100 transition flex items-center gap-2">
-                    <Eye size={16} /> {currentDrop.buttonText}
-                  </button>
-                </div>
-              </div> */}
                         </div>
                     </div>
 
                     {/* Dots */}
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '16px' }}>
+                    <div style={{
+                        display: 'flex', justifyContent: 'center',
+                        alignItems: 'center', gap: '10px', marginTop: '16px',
+                    }}>
                         {drops.map((_, index) => (
                             <button
                                 key={index}
@@ -157,6 +157,13 @@ const LatestDrops = () => {
 
                 </div>
             </div>
+
+            <style>{`
+                .latest-drop-img { height: 260px; }
+                @media (min-width: 640px) { .latest-drop-img { height: 380px; } }
+                @media (min-width: 768px) { .latest-drop-img { height: 480px; } }
+                @media (min-width: 1024px) { .latest-drop-img { height: 560px; } }
+            `}</style>
         </div>
     );
 };
