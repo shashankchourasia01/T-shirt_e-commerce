@@ -9,8 +9,8 @@ const FeaturesStripe = ({ style = {} }) => {
   ];
 
   return (
-    <div style={{ backgroundColor: '#e8f4f8', borderBottom: '1px solid #f3f4f6',marginTop: '12px', ...style }}>
-      <div style={{ padding: '8px 16px' }}>
+    <div style={{ backgroundColor: '#e8f4f8', borderBottom: '1px solid #f3f4f6',marginTop: '14px', ...style }}>
+      <div style={{ padding: '6px 16px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', gap: '8px' }}>
           {features.map((feature, index) => {
             const Icon = feature.icon;
