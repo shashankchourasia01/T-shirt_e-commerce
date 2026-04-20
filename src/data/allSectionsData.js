@@ -304,7 +304,7 @@ export const productsByCategory = {
       originalPrice: 1899,
       discount: 31,
       image: "/images/allimg5.jpg",
-      tag: "MUSIC"
+      tag: "CLASSY"
     },
     {
       id: 506,
