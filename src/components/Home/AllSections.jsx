@@ -52,29 +52,40 @@ const AllSections = () => {
         </div>
 
         {/* Section Title */}
-        <div style={{ marginBottom: '16px' }}>
-          <h2 style={{
-            fontSize: 'clamp(18px, 5vw, 24px)',
-            fontWeight: 800, color: '#111827',
-            margin: 0, letterSpacing: '-0.3px',
-          }}>
-            {categories.find(c => c.slug === activeCategory)?.name}
-            {' '}
-            <span style={{
-              background: 'linear-gradient(to right, #16a34a, #2563eb)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>
-              COLLECTION
-            </span>
-          </h2>
-          <div style={{
-            width: '36px', height: '3px',
-            background: 'linear-gradient(to right, #16a34a, #2563eb)',
-            borderRadius: '9999px', marginTop: '6px',
-          }} />
-        </div>
+        {/* Section Title */}
+<div style={{ marginBottom: '16px' }}>
+  <h2 style={{
+    fontFamily: '"DM Sans", sans-serif',
+    fontSize: 'clamp(20px, 5.5vw, 30px)',
+    fontWeight: 800,
+    color: '#111827',
+    margin: 0,
+    letterSpacing: '-0.5px',
+    lineHeight: 1.15,
+  }}>
+    {categories.find(c => c.slug === activeCategory)?.name}
+    {' '}
+    <span style={{
+      fontFamily: '"DM Sans", sans-serif',
+      fontWeight: 300,
+      letterSpacing: '4px',
+      fontSize: 'clamp(20px, 5.5vw, 30px)',
+      background: 'linear-gradient(to right, #16a34a, #2563eb)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+    }}>
+      COLLECTION
+    </span>
+  </h2>
+  <div style={{
+    width: '40px',
+    height: '2px',
+    background: 'linear-gradient(to right, #16a34a, #2563eb)',
+    borderRadius: '9999px',
+    marginTop: '8px',
+  }} />
+</div>
 
         {/* Grid — KEY FIX: width 100%, no overflow */}
         <div style={{

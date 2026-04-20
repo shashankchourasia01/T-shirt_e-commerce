@@ -3,7 +3,7 @@ import { newArrivalsData } from '../../data/newArrivalsData';
 
 const NewArrivals = () => {
   return (
-    <div style={{ width: '100%', backgroundColor: '#fff', paddingTop: '40px', paddingBottom: '40px' }}>
+    <div style={{ width: '100%', backgroundColor: '#fff', paddingTop: '10px', paddingBottom: '20px' }}>
       <div style={{
         maxWidth: '1280px',
         margin: '0 auto',
@@ -14,35 +14,39 @@ const NewArrivals = () => {
       }}>
 
         {/* Heading */}
-        <div style={{ marginBottom: '20px' }}>
-          <h2 style={{
-            fontFamily: '"Poppins", sans-serif',
-            fontSize: 'clamp(22px, 6vw, 32px)',
-            fontWeight: 900,
-            color: '#111827',
-            margin: 0,
-            letterSpacing: '-1px',
-            textTransform: 'uppercase',
-            lineHeight: 1.1,
-          }}>
-            NEW{' '}
-            <span style={{
-              background: 'linear-gradient(to right, #16a34a, #2563eb)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>
-              ARRIVALS
-            </span>
-          </h2>
-          <div style={{
-            width: '40px',
-            height: '3px',
-            background: 'linear-gradient(to right, #16a34a, #2563eb)',
-            borderRadius: '9999px',
-            marginTop: '8px',
-          }} />
-        </div>
+        {/* Heading */}
+<div style={{ marginBottom: '20px' }}>
+  <h2 style={{
+    fontFamily: '"DM Sans", sans-serif',
+    fontSize: 'clamp(20px, 5.5vw, 30px)',
+    fontWeight: 800,
+    color: '#111827',
+    margin: 0,
+    letterSpacing: '-0.5px',
+    lineHeight: 1.15,
+  }}>
+    NEW{' '}
+    <span style={{
+      fontFamily: '"DM Sans", sans-serif',
+      fontWeight: 300,
+      letterSpacing: '4px',
+      fontSize: 'clamp(20px, 5.5vw, 30px)',
+      background: 'linear-gradient(to right, #16a34a, #2563eb)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+    }}>
+      ARRIVALS
+    </span>
+  </h2>
+  <div style={{
+    width: '40px',
+    height: '2px',
+    background: 'linear-gradient(to right, #16a34a, #2563eb)',
+    borderRadius: '9999px',
+    marginTop: '8px',
+  }} />
+</div>
 
         {/* 2-column vertical grid */}
         <div
