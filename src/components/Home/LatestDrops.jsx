@@ -57,15 +57,39 @@ const LatestDrops = () => {
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Heading */}
-                <div className="text-center mb-6 sm:mb-8 md:mb-10">
-                    <h2 className="text-xl sm:text-2xl md:text-2xl font-bold text-gray-900 tracking-tight">
-                        LATEST{' '}
-                        <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                            DROPS
-                        </span>
-                    </h2>
-                    {/* <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-green-600 to-blue-600 mx-auto mt-2 sm:mt-3" /> */}
-                </div>
+                {/* Heading */}
+<div style={{ marginBottom: '24px' }}>
+  <h2 style={{
+    fontFamily: '"DM Sans", sans-serif',
+    fontSize: 'clamp(20px, 5.5vw, 30px)',
+    fontWeight: 800,
+    color: '#111827',
+    margin: 0,
+    letterSpacing: '-0.5px',
+    lineHeight: 1.15,
+  }}>
+    LATEST{' '}
+    <span style={{
+      fontFamily: '"DM Sans", sans-serif',
+      fontWeight: 300,
+      letterSpacing: '4px',
+      fontSize: 'clamp(20px, 5.5vw, 30px)',
+      background: 'linear-gradient(to right, #16a34a, #2563eb)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+    }}>
+      DROPS
+    </span>
+  </h2>
+  <div style={{
+    width: '40px',
+    height: '2px',
+    background: 'linear-gradient(to right, #16a34a, #2563eb)',
+    borderRadius: '9999px',
+    marginTop: '8px',
+  }} />
+</div>
 
                 {/* Slider */}
                 <div className="relative">
