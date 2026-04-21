@@ -94,5 +94,17 @@ export const newArrivalsData = [
     discount: 35,
     image: "/images/new_arr3.avif",
     category: "TV Shows"
+  },
+  {
+    id: 9,
+    name: "Bootcut Denim: Indigo Blu",
+    type: "BOOTCUT FIT",
+    fit: "DENIM FABRIC",
+    detail: "WASHED EFFECT",
+    price: 2299,
+    originalPrice: 2999,
+    discount: 23,
+    image: "/images/new_arr2.avif",
+    category: "Denim"
   }
 ];
