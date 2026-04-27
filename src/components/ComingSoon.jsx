@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ShoppingBag, Mail, Instagram, Twitter, Facebook } from 'lucide-react';
+import { useState, useEffect, useMemo } from 'react';
+import { ShoppingBag, Mail, Instagram, Twitter } from 'lucide-react';
 
 const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -9,9 +9,12 @@ const ComingSoon = () => {
     seconds: 0
   });
 
-  // Launch date - 15 days from now (tu change kar sakta hai)
-  const launchDate = new Date();
-  launchDate.setDate(launchDate.getDate() + 15);
+  // useMemo se launchDate sirf ek baar banega - fix for Error 2
+  const launchDate = useMemo(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 15);
+    return date;
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -32,7 +35,7 @@ const ComingSoon = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [launchDate]);
+  }, [launchDate]); // launchDate stable hai ab
 
   const containerStyle = {
     minHeight: '100vh',
@@ -130,7 +133,20 @@ const ComingSoon = () => {
     backgroundColor: '#f5f5f5',
     borderRadius: '50%',
     cursor: 'pointer',
-    transition: 'background-color 0.3s'
+    transition: 'background-color 0.3s',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  };
+
+  const handleNotify = () => {
+    const email = document.getElementById('notify-email').value;
+    if (email) {
+      alert(`Thanks! We'll notify you at ${email} when we launch.`);
+      document.getElementById('notify-email').value = '';
+    } else {
+      alert('Please enter your email address.');
+    }
   };
 
   return (
@@ -178,26 +194,34 @@ const ComingSoon = () => {
         </p>
         <div style={emailInputStyle}>
           <input 
+            id="notify-email"
             type="email" 
             placeholder="Enter your email" 
             style={inputStyle}
           />
-          <button style={buttonStyle}>
+          <button style={buttonStyle} onClick={handleNotify}>
             <Mail size={16} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'middle' }} />
             Notify Me
           </button>
         </div>
 
-        {/* Social Links */}
+        {/* Social Links - Fixed without Facebook */}
         <div style={socialStyle}>
-          <a href="#" style={socialIconStyle} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e5e5e5'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#f5f5f5'}>
+          <a 
+            href="#" 
+            style={socialIconStyle} 
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e5e5e5'} 
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#f5f5f5'}
+          >
             <Instagram size={20} color="#333" />
           </a>
-          <a href="#" style={socialIconStyle} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e5e5e5'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#f5f5f5'}>
+          <a 
+            href="#" 
+            style={socialIconStyle} 
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e5e5e5'} 
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#f5f5f5'}
+          >
             <Twitter size={20} color="#333" />
-          </a>
-          <a href="#" style={socialIconStyle} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e5e5e5'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#f5f5f5'}>
-            <Facebook size={20} color="#333" />
           </a>
         </div>
 
