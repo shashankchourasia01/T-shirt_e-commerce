@@ -244,7 +244,7 @@ const ComingSoon = () => {
           </button>
         </div>
 
-        {/* Social Links - No Icons, Pure Text */}
+        {/* Social Links - N Icons, Pure Text */}
         <div style={socialStyle}>
           <a 
             href="#" 
