@@ -7,19 +7,19 @@ import AllSections from '../components/Home/AllSections';
 const HomePage = () => {
   return (
     <div className="bg-white min-h-screen">
-      <HeroSlider />
+      {/* <HeroSlider />
       
-      <FeaturesStripe />
+      <FeaturesStripe /> */}
       
       {/* Tailwind class ki jagah inline style — guaranteed kaam karega */}
       <div style={{ marginTop: '24px' }}>
-        <LatestDrops />
+        {/* <LatestDrops /> */}
       </div>
 
         {/* New Arrivals Section - Naya add kiya */}
-      <NewArrivals />
+      {/* <NewArrivals />
 
-      <AllSections />
+      <AllSections /> */}
 
       <div className="container-custom py-8 sm:py-12">
         <div className="text-center">
