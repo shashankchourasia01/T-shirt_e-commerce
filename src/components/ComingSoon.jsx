@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import smokeVideo from "../assets/smoke.mp4";
 import storeName from "../assets/store-name.jpeg";
 
-
 export default function App() {
   const title = "COMING SOON";
 
@@ -11,7 +10,7 @@ export default function App() {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   // 🔤 word swap
-  const words = ["With Some!", "Creative 👌", "Designs 😎", "Stay Tuned!","🤍🤍"];
+  const words = ["With Some!", "Creative 👌", "Designs 😎", "Stay Tuned!", "🤍🤍"];
   const [wordIndex, setWordIndex] = useState(0);
 
   // ⛔ control when section 2 starts
@@ -52,18 +51,24 @@ export default function App() {
     return () => clearInterval(wordInterval);
   }, [startWords]);
 
-  return (
-    <div className="bg-black min-h-screen flex flex-col items-center justify-top gap-5 pt-10">
+  // Instagram link - tu apna Instagram handle daal
+  const instagramUrl = "https://www.instagram.com/thebobstore_?igsh=Y25rZDRhYWhqMXZp"; 
+  const handleInstagramClick = () => {
+    window.open(instagramUrl, "_blank");
+  };
 
-       <img
+  return (
+    <div className="bg-black min-h-screen flex flex-col items-center justify-center gap-5 px-4">
+      
+      {/* Store Logo */}
+      <img
         src={storeName}
         alt="Store Name"
-        className="w-[200px] md:w-[320px] object-contain"
+        className="w-[200px] md:w-[320px] object-contain mt-8"
       />
 
-      {/* 🔥 SECTION 1 */}
+      {/* 🔥 SECTION 1 - Smoke Video */}
       <div className="relative w-[90%] max-w-[700px] h-[200px] overflow-hidden">
-
         <video
           ref={videoRef}
           autoPlay
@@ -76,7 +81,6 @@ export default function App() {
 
         <h1 className="absolute inset-0 flex items-center justify-center
                        text-white text-4xl md:text-6xl font-bold tracking-[0.3rem]">
-
           {title.split("").map((char, i) => (
             <span
               key={i}
@@ -90,12 +94,12 @@ export default function App() {
         </h1>
       </div>
 
-      {/* ✨ SECTION 2 (with fade-in) */}
+      {/* ✨ SECTION 2 - Animated Text */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={startWords ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="text-white text-2xl md:text-4xl flex items-center gap-3"
+        className="text-white text-2xl md:text-4xl flex items-center gap-3 flex-wrap justify-center"
       >
         <span>This Summer</span>
 
@@ -121,309 +125,43 @@ export default function App() {
         </div>
       </motion.div>
 
-    
-      </div>
+      {/* 🟣 INSTAGRAM CONNECT SECTION - NEW ADD KAR RAHA HOON */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={startWords ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="mt-8"
+      >
+        <button
+          onClick={handleInstagramClick}
+          className="group relative px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full 
+                     text-white font-semibold text-lg flex items-center gap-3 
+                     hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/30"
+        >
+          {/* Instagram Icon (simple text version - no external icon) */}
+          <span className="text-2xl">📸</span>
+          <span>Connect on Instagram</span>
+          
+          {/* Hover effect line */}
+          <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-white transition-all duration-300 
+                           group-hover:w-1/2 group-hover:left-1/4"></span>
+        </button>
+        
+        {/* Optional: Show handle */}
+        <p className="text-gray-500 text-xs text-center mt-6">
+          @thebobstore_
+        </p>
+      </motion.div>
 
-
-    
-    
+      {/* Footer Message */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={startWords ? { opacity: 1 } : {}}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        className="text-gray-600 text-xs text-center mt-6"
+      >
+        Be the first to know when we launch! ✨
+      </motion.p>
+    </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState, useEffect, useMemo } from 'react';
-
-// const ComingSoon = () => {
-//   const [timeLeft, setTimeLeft] = useState({
-//     days: 0,
-//     hours: 0,
-//     minutes: 0,
-//     seconds: 0
-//   });
-
-//   // Launch date - 15 days from now
-//   const launchDate = useMemo(() => {
-//     const date = new Date();
-//     date.setDate(date.getDate() + 15);
-//     return date;
-//   }, []);
-
-//   useEffect(() => {
-//     const timer = setInterval(() => {
-//       const now = new Date().getTime();
-//       const distance = launchDate.getTime() - now;
-
-//       if (distance < 0) {
-//         clearInterval(timer);
-//         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-//       } else {
-//         setTimeLeft({
-//           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-//           hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-//           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-//           seconds: Math.floor((distance % (1000 * 60)) / 1000)
-//         });
-//       }
-//     }, 1000);
-
-//     return () => clearInterval(timer);
-//   }, [launchDate]);
-
-//   const handleNotify = () => {
-//     const email = document.getElementById('notify-email').value;
-//     if (email) {
-//       alert(`Thanks! We'll notify you at ${email} when we launch.`);
-//       document.getElementById('notify-email').value = '';
-//     } else {
-//       alert('Please enter your email address.');
-//     }
-//   };
-
-//   // Styles
-//   const containerStyle = {
-//     minHeight: '100vh',
-//     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     padding: '20px'
-//   };
-
-//   const cardStyle = {
-//     backgroundColor: 'white',
-//     borderRadius: '24px',
-//     padding: '50px 40px',
-//     maxWidth: '550px',
-//     width: '100%',
-//     textAlign: 'center',
-//     boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
-//   };
-
-//   const logoStyle = {
-//     fontSize: '32px',
-//     fontWeight: '800',
-//     marginBottom: '10px',
-//     letterSpacing: '-1px'
-//   };
-
-//   const logoFirstStyle = {
-//     color: '#333'
-//   };
-
-//   const logoSpanStyle = {
-//     color: '#667eea'
-//   };
-
-//   const taglineStyle = {
-//     fontSize: '12px',
-//     color: '#999',
-//     marginBottom: '30px',
-//     letterSpacing: '2px'
-//   };
-
-//   const headingStyle = {
-//     fontSize: '32px',
-//     fontWeight: '700',
-//     marginBottom: '12px',
-//     color: '#1a1a1a'
-//   };
-
-//   const descriptionStyle = {
-//     color: '#666',
-//     marginBottom: '30px',
-//     fontSize: '15px',
-//     lineHeight: '1.5'
-//   };
-
-//   const timerContainerStyle = {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     gap: '15px',
-//     marginBottom: '35px',
-//     flexWrap: 'wrap'
-//   };
-
-//   const timerBoxStyle = {
-//     backgroundColor: '#f8f9fa',
-//     borderRadius: '16px',
-//     padding: '18px 15px',
-//     minWidth: '80px',
-//     textAlign: 'center',
-//     border: '1px solid #eee'
-//   };
-
-//   const timerNumberStyle = {
-//     fontSize: '32px',
-//     fontWeight: '800',
-//     color: '#333',
-//     display: 'block'
-//   };
-
-//   const timerLabelStyle = {
-//     fontSize: '11px',
-//     color: '#888',
-//     marginTop: '6px',
-//     textTransform: 'uppercase',
-//     letterSpacing: '1px'
-//   };
-
-//   const emailInputContainerStyle = {
-//     display: 'flex',
-//     marginBottom: '30px',
-//     gap: '12px',
-//     flexWrap: 'wrap'
-//   };
-
-//   const inputStyle = {
-//     flex: 1,
-//     padding: '14px 20px',
-//     border: '1px solid #e0e0e0',
-//     borderRadius: '50px',
-//     fontSize: '14px',
-//     outline: 'none',
-//     fontFamily: 'inherit'
-//   };
-
-//   const buttonStyle = {
-//     padding: '14px 32px',
-//     backgroundColor: '#000',
-//     color: 'white',
-//     border: 'none',
-//     borderRadius: '50px',
-//     fontSize: '14px',
-//     fontWeight: '600',
-//     cursor: 'pointer',
-//     transition: 'background-color 0.3s'
-//   };
-
-//   const socialStyle = {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     gap: '25px',
-//     marginBottom: '25px'
-//   };
-
-//   const socialLinkStyle = {
-//     fontSize: '14px',
-//     color: '#888',
-//     textDecoration: 'none',
-//     transition: 'color 0.3s'
-//   };
-
-//   const footerStyle = {
-//     fontSize: '11px',
-//     color: '#bbb',
-//     borderTop: '1px solid #f0f0f0',
-//     paddingTop: '20px',
-//     marginTop: '10px'
-//   };
-
-//   return (
-//     <div style={containerStyle}>
-//       <div style={cardStyle}>
-//         {/* Logo */}
-//         <div style={logoStyle}>
-//           <span style={logoFirstStyle}>TSHIRT</span>
-//           <span style={logoSpanStyle}>STORE</span>
-//         </div>
-//         <div style={taglineStyle}>POP CULTURE APPAREL</div>
-
-//         {/* Heading */}
-//         <h2 style={headingStyle}>Coming Soon!</h2>
-//         <p style={descriptionStyle}>
-//           We're working hard to bring you the best collection of graphic tees, oversized fits, and exclusive pop culture apparel.
-//         </p>
-
-//         {/* Timer */}
-//         <div style={timerContainerStyle}>
-//           <div style={timerBoxStyle}>
-//             <span style={timerNumberStyle}>{String(timeLeft.days).padStart(2, '0')}</span>
-//             <span style={timerLabelStyle}>Days</span>
-//           </div>
-//           <div style={timerBoxStyle}>
-//             <span style={timerNumberStyle}>{String(timeLeft.hours).padStart(2, '0')}</span>
-//             <span style={timerLabelStyle}>Hours</span>
-//           </div>
-//           <div style={timerBoxStyle}>
-//             <span style={timerNumberStyle}>{String(timeLeft.minutes).padStart(2, '0')}</span>
-//             <span style={timerLabelStyle}>Mins</span>
-//           </div>
-//           <div style={timerBoxStyle}>
-//             <span style={timerNumberStyle}>{String(timeLeft.seconds).padStart(2, '0')}</span>
-//             <span style={timerLabelStyle}>Secs</span>
-//           </div>
-//         </div>
-
-//         {/* Email Signup */}
-//         <p style={{ fontSize: '13px', color: '#666', marginBottom: '12px', textAlign: 'left' }}>
-//           👋 Get notified when we launch!
-//         </p>
-//         <div style={emailInputContainerStyle}>
-//           <input 
-//             id="notify-email"
-//             type="email" 
-//             placeholder="Enter your email address" 
-//             style={inputStyle}
-//             onFocus={(e) => e.target.style.borderColor = '#667eea'}
-//             onBlur={(e) => e.target.style.borderColor = '#e0e0e0'}
-//           />
-//           <button 
-//             style={buttonStyle}
-//             onClick={handleNotify}
-//             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#333'}
-//             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#000'}
-//           >
-//             Notify Me
-//           </button>
-//         </div>
-
-//         {/* Social Links - No Icons, Pure Text */}
-//         <div style={socialStyle}>
-//           <a 
-//             href="#" 
-//             style={socialLinkStyle}
-//             onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-//             onMouseLeave={(e) => e.currentTarget.style.color = '#888'}
-//           >
-//             Instagram
-//           </a>
-//           <a 
-//             href="#" 
-//             style={socialLinkStyle}
-//             onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-//             onMouseLeave={(e) => e.currentTarget.style.color = '#888'}
-//           >
-//             Twitter
-//           </a>
-//           <a 
-//             href="#" 
-//             style={socialLinkStyle}
-//             onMouseEnter={(e) => e.currentTarget.style.color = '#667eea'}
-//             onMouseLeave={(e) => e.currentTarget.style.color = '#888'}
-//           >
-//             Facebook
-//           </a>
-//         </div>
-
-//         {/* Footer */}
-//         <div style={footerStyle}>
-//           © 2024 TShirtStore. All rights reserved.
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ComingSoon;
