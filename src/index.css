@@ -106,8 +106,3 @@ html {
 .animate-letter {
   animation: letter 1.1s ease-in-out;
 }
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
