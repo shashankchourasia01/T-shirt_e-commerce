@@ -88,14 +88,38 @@ html {
 
 
 // for coming soon page
-/* Float Animation */
+
+/* Float Animation - Multiple browsers ke liye */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Safari/WebKit browsers ke liye */
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
 }
 
 .animate-bounce-slow {
+  -webkit-animation: float 2s ease-in-out infinite;
   animation: float 2s ease-in-out infinite;
 }
 

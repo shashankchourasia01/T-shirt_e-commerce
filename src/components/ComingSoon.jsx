@@ -315,9 +315,14 @@ export default function App() {
           <h1 style={boldHeadingStyle}>It's Coming</h1>
 
           {/* IMAGE */}
-          <div style={imageContainerStyle} className="animate-bounce-slow">
-            <img src={img1} alt="product" style={imageStyle} />
-          </div>
+          <div style={{
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  animation: 'float 2s ease-in-out infinite'
+}}>
+  <img src={img1} alt="product" style={imageStyle} />
+</div>
           
           <h2 style={followTextStyle}>Follow us</h2>
           <h1 style={instagramHeadingStyle}>Instagram</h1>
@@ -349,9 +354,15 @@ export default function App() {
           </div>
 
           {/* IMAGE */}
-          <div style={desktopImageStyle} className="animate-bounce-slow">
-            <img src={img1} alt="product" style={desktopImageInnerStyle} />
-          </div>
+          {/* IMAGE - Inline animation style */}
+<div style={{
+  position: 'absolute',
+  top: '10%',
+  left: '15%',
+  animation: 'float 2s ease-in-out infinite'
+}}>
+  <img src={img1} alt="product" style={desktopImageInnerStyle} />
+</div>
 
           {/* RIGHT TEXT */}
           <div style={rightTextStyle}>
