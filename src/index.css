@@ -30,7 +30,7 @@ body {
   font-family: "Inter", system-ui, sans-serif;
 }
 
-/* Smooth scrolling */
+// Smooth scrolling 
 html {
   scroll-behavior: smooth;
 }
