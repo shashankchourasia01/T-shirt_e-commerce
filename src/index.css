@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+/* @theme {
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
   
@@ -80,7 +80,10 @@ html {
   [data-arrivals] > div {
     min-width: calc(25% - 9px);
   }
-}
+} */
+
+
+
 
 
 
