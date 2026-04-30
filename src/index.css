@@ -88,6 +88,7 @@ html {
 
 
 // for coming soon page
+/* Float Animation */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -96,4 +97,10 @@ html {
 
 .animate-bounce-slow {
   animation: float 2s ease-in-out infinite;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
