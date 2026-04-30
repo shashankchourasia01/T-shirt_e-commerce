@@ -57,7 +57,7 @@ html {
   }
 }
 
-/* Hide scrollbar for horizontal scrolling */
+//Hide scrollbar for horizontal scrolling 
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
