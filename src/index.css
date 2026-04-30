@@ -70,7 +70,7 @@ html {
 
 // for new arrivals
 
-/* NewArrivals responsive card width */
+// NewArrivals responsive card width 
 @media (min-width: 640px) {
   [data-arrivals] > div {
     min-width: calc(33.33% - 8px);
